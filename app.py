@@ -22,10 +22,13 @@ myscreen.onkey(key="Right", fun=snake.right)
 movement=1
 score=0
 while movement>0:
-    
-    myscreen.update()
-    time.sleep(0.1)
-    snake.move()
+    try:
+        myscreen.update()
+        time.sleep(0.1)
+        
+        snake.move()
+    except:
+        pass
     if snake.snakes_body[0].distance(food)<15:
         score +=1
         food.new_location()
